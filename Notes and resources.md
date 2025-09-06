@@ -10,7 +10,7 @@ This is a 32 bit 5 stage pipelined MIPS CPU
 1. Instruction memory
 2. 32 bit adder
 3. Register file
-4. 32 bit alu
+4. 32 bit ALU
 5. Data memory
 6. Zero extension module
 7. MUX (choosing bus B)
