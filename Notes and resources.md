@@ -26,3 +26,12 @@ This is a 32 bit 5 stage pipelined MIPS CPU
 17. WB forward unit
 18. Top level
 19. Testbench
+
+Control unit control signals:
+
+![[Pasted image 20250908200302.png]]
+
+ALU control signals:
+
+![[Pasted image 20250908200326.png]]
+
