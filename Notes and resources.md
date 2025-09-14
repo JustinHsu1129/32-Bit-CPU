@@ -42,3 +42,4 @@ Stall control signals:
 Final layout
 
 ![[Pasted image 20250915003425.png]]
+
