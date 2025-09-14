@@ -38,3 +38,7 @@ ALU control signals:
 Stall control signals:
 
 ![[Pasted image 20250914204956.png]]
+
+Final layout
+
+![[Pasted image 20250915003425.png]]
