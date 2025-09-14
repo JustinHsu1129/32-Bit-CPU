@@ -35,3 +35,6 @@ ALU control signals:
 
 ![[Pasted image 20250908200326.png]]
 
+Stall control signals:
+
+![[Pasted image 20250914204956.png]]
