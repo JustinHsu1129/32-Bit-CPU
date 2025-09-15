@@ -1,0 +1,57 @@
+{
+  "DESIGN_NAME": "MIPSpipeline",
+  "VERILOG_FILES": [
+    "dir::Top level.v",
+    "dir::32 bit ALU.v",
+    "dir::32 bit adder.v",
+    "dir::3x32 mux.v",
+    "dir::ALU control unit.v",
+    "dir::Bus mux.v",
+    "dir::Control unit.v",
+    "dir::Data memory.v",
+    "dir::Flush control unit.v",
+    "dir::Forwarding unit.v",
+    "dir::Instruction Memory.v",
+    "dir::JR control unit.v",
+    "dir::Register file.v",
+    "dir::Sign extension and shift left.v",
+    "dir::Stall control unit.v",
+    "dir::Write address mux.v",
+    "dir::Writeback forward unit.v",
+    "dir::Zero extension.v"
+  ],
+  "CLOCK_PERIOD": 25,
+  "CLOCK_PORT": "clk",
+  "PLATFORM": "sky130",
+  "STD_CELL_LIBRARY": "sky130_fd_sc_hd",
+
+  "DIE_AREA": "0 0 600 600",
+  "FP_CORE_UTIL": 50,
+
+  "RUN_GATE_LEVEL_SIMULATION": 1,
+  "GLS_FILES": ["dir::testbench.v"],
+  "SAIF_FILE": "$gate_level_simulation_dir/MIPSpipeline.saif",
+
+  "STD_CELL_LIBRARY_GND_PORT": "VGND",
+  "STD_CELL_LIBRARY_VDD_PORT": "VPWR",
+  "FP_PDN_ENABLE_RAILS": "1",
+  "FP_PDN_RAILS_LAYER": "met1",
+  "FP_PDN_CORE_RING": "1",
+  "FP_PDN_CORE_RING_VLAYER": "met5",
+  "FP_PDN_CORE_RING_HLAYER": "met3",
+  "FP_PDN_CORE_RING_VWIDTH": "1.6",
+  "FP_PDN_CORE_RING_HWIDTH": "1.6",
+  "FP_PDN_CORE_RING_VOFFSET": "6",
+  "FP_PDN_CORE_RING_HOFFSET": "6",
+  "FP_PDN_VOFFSET": "3",
+  "FP_PDN_HOFFSET": "3",
+  "FP_PDN_VWIDTH": "1.8",
+  "FP_PDN_HWIDTH": "1.8",
+  "FP_PDN_VPITCH": "10",
+  "FP_PDN_HPITCH": "10",
+  "FP_PDN_VLAYER": "met5",
+  "FP_PDN_HLAYER": "met3",
+
+  "LVS_INCLUDE_CONFIGS": ["dir::sky130A/libs.ref/sky130_fd_pr/spice/sky130_fd_pr.spice"]
+}
+
