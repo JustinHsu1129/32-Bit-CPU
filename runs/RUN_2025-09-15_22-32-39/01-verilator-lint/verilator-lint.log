@@ -1,0 +1,62 @@
+%Warning-WIDTHEXPAND: /Users/jhsu2022/my_designs/32-Bit-CPU/JR control unit.v:18:33: Operator ASSIGN expects 8 bits on the Assign RHS, but Assign RHS's CONST '1'h1' generates 1 bits.
+                                                                                   : ... note: In instance 'MIPSpipeline.JR_CU'
+   18 |         8'b10001000 : JRControl = 1'b1;
+      |                                 ^
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.018
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
+%Warning-WIDTHEXPAND: /Users/jhsu2022/my_designs/32-Bit-CPU/JR control unit.v:19:31: Operator ASSIGN expects 8 bits on the Assign RHS, but Assign RHS's CONST '1'h0' generates 1 bits.
+                                                                                   : ... note: In instance 'MIPSpipeline.JR_CU'
+   19 |         default :   JRControl = 1'b0;
+      |                               ^
+%Warning-WIDTHEXPAND: /Users/jhsu2022/my_designs/32-Bit-CPU/Top level.v:105:6: Output port connection 'JRControl' expects 8 bits on the pin connection, but pin connection's VARREF 'JRControl' generates 1 bits.
+                                                                             : ... note: In instance 'MIPSpipeline'
+  105 |     .JRControl(JRControl),
+      |      ^~~~~~~~~
+%Warning-UNUSEDSIGNAL: /Users/jhsu2022/my_designs/32-Bit-CPU/Top level.v:17:69: Bits of signal are not used: 'IDEX_Instruction'[31:26,10:6]
+                                                                              : ... note: In instance 'MIPSpipeline'
+   17 | reg [31:0] IDEX_PC4, IDEX_ReadData1, IDEX_ReadData2, IDEX_Im16_Ext, IDEX_Instruction;
+      |                                                                     ^~~~~~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /Users/jhsu2022/my_designs/32-Bit-CPU/Top level.v:40:24: Signal is not driven, nor used: 'PCjr'
+                                                                              : ... note: In instance 'MIPSpipeline'
+   40 | reg [31:0] PCbne, PCj, PCjr;
+      |                        ^~~~
+%Warning-UNUSEDSIGNAL: /Users/jhsu2022/my_designs/32-Bit-CPU/Top level.v:49:16: Signal is not used: 'OverflowFlag'
+                                                                              : ... note: In instance 'MIPSpipeline'
+   49 | wire ZeroFlag, OverflowFlag, NegativeFlag;
+      |                ^~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /Users/jhsu2022/my_designs/32-Bit-CPU/Top level.v:49:30: Signal is not used: 'NegativeFlag'
+                                                                              : ... note: In instance 'MIPSpipeline'
+   49 | wire ZeroFlag, OverflowFlag, NegativeFlag;
+      |                              ^~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /Users/jhsu2022/my_designs/32-Bit-CPU/Top level.v:54:5: Signal is not used: 'EX_JRControl'
+                                                                             : ... note: In instance 'MIPSpipeline'
+   54 | reg EX_JRControl;
+      |     ^~~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /Users/jhsu2022/my_designs/32-Bit-CPU/Top level.v:65:12: Signal is not used: 'rd'
+                                                                              : ... note: In instance 'MIPSpipeline'
+   65 | wire [4:0] rd = IFID_Instruction[15:11];
+      |            ^~
+%Warning-UNUSEDSIGNAL: /Users/jhsu2022/my_designs/32-Bit-CPU/Data memory.v:9:19: Bits of signal are not used: 'address'[31:16,1:0]
+                                                                               : ... note: In instance 'MIPSpipeline.DM'
+    9 |     input  [31:0] address,
+      |                   ^~~~~~~
+%Warning-UNDRIVEN: /Users/jhsu2022/my_designs/32-Bit-CPU/Instruction Memory.v:13:12: Signal is not driven: 'instMem'
+                                                                                   : ... note: In instance 'MIPSpipeline.IM'
+   13 | reg [31:0] instMem [63:0];
+      |            ^~~~~~~
+%Warning-CASEWITHX: /Users/jhsu2022/my_designs/32-Bit-CPU/ALU control unit.v:18:9: Use of x/? constant in case statement, (perhaps intended casex/casez)
+   18 |         8'b11xxxxxx: ALUControl=2'b01;
+      |         ^~~~~~~~~~~
+%Warning-CASEWITHX: /Users/jhsu2022/my_designs/32-Bit-CPU/ALU control unit.v:19:9: Use of x/? constant in case statement, (perhaps intended casex/casez)
+   19 |         8'b00xxxxxx: ALUControl=2'b00;
+      |         ^~~~~~~~~~~
+%Warning-CASEWITHX: /Users/jhsu2022/my_designs/32-Bit-CPU/ALU control unit.v:20:9: Use of x/? constant in case statement, (perhaps intended casex/casez)
+   20 |         8'b01xxxxxx: ALUControl=2'b10;
+      |         ^~~~~~~~~~~
+%Warning-SYNCASYNCNET: /Users/jhsu2022/my_designs/32-Bit-CPU/Top level.v:7:11: Signal flopped as both synchronous and async: 'reset'
+                       /Users/jhsu2022/my_designs/32-Bit-CPU/Top level.v:297:9: ... Location of async usage
+  297 |     if (reset) begin
+      |         ^~~~~
+                       /Users/jhsu2022/my_designs/32-Bit-CPU/Register file.v:27:13: ... Location of sync usage
+   27 |         if (reset) begin
+      |             ^~~~~

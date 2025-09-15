@@ -1,0 +1,6 @@
+- cell: MIPSpipeline
+  inout: []
+  input: []
+  output:
+  - current_pc[0]
+  - current_pc[1]

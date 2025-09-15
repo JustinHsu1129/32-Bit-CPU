@@ -1,0 +1,21 @@
+[WARNING ORD-0039] .openroad ignored with -python
+Unannotated report:
+['report_parasitic_annotation -report_unannotated\n',
+ '============================================================================\n',
+ 'Found 5 unannotated drivers.\n',
+ ' MIPSpipeline_36/HI\n',
+ ' MIPSpipeline_37/HI\n',
+ ' clkload0/X\n',
+ ' clkload1/X\n',
+ ' clkload2/X\n',
+ 'Found 0 partially unannotated drivers.\n',
+ '\n']
+Reported nets:
+['MIPSpipeline_36/HI',
+ 'MIPSpipeline_37/HI',
+ 'clkload0/X',
+ 'clkload1/X',
+ 'clkload2/X']
+Filtered nets:
+[]
+done

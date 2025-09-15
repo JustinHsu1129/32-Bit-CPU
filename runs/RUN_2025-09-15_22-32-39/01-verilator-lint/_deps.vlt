@@ -1,0 +1,5 @@
+`verilator_config
+lint_off -rule DECLFILENAME
+lint_off -rule EOFNEWLINE
+lint_off -rule UNDRIVEN -file "/Users/jhsu2022/my_designs/32-Bit-CPU/runs/RUN_2025-09-15_22-32-39/tmp/babd4ca11d7a4eb4824dfaa504bb08e7.bb.v"
+lint_off -rule UNUSEDSIGNAL -file "/Users/jhsu2022/my_designs/32-Bit-CPU/runs/RUN_2025-09-15_22-32-39/tmp/babd4ca11d7a4eb4824dfaa504bb08e7.bb.v"
