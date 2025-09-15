@@ -12,30 +12,30 @@ There is a VCD file generated from running the testbench through icarus verilog.
 
 ## Layout
 
-![[Pasted image 20250915004236.png]]
+![Layout](Images/Pasted%20image%2020250915004236.png)
 
 ## Placement Density
 
-![[Pasted image 20250915223449.png]]
+![Placement Density](Images/Pasted%20image%2020250915223449.png)
 
 ## Power Density
 
 yeah idk why this isn't working lmao. Can't upload the VCD file, tells me there's an error on line 233 for a unknown variable that does not exist on line 233. 0 idea what the issue could possibly be. ChatGPT has not been helpful in diagnosing the issue.
 
-![[Pasted image 20250915223621.png]]
+![Power Density](Images/Pasted%20image%2020250915223621.png)
 
 ## Routing Congestion
 
-![[Pasted image 20250915223638.png]]
+![Routing Congestion](Images/Pasted%20image%2020250915223638.png)
 
 ## Estimated Congestion (RUDY)
 
 This is the approximate routing congestion as determined by the RUDY metric, where RUDY = rectangular uniform wire density. RUDY assumes the wire demand is spread uniformly across the rectangle.
 
-![[Pasted image 20250915223850.png]]
+![Estimated Congestion (RUDY)](Images/Pasted%20image%2020250915223850.png)
 
 ## IR Drop
 
 yeah same issue as power density idk why this isn't working either. Cannot upload VCD so it seems like it's only tracking static power so there is basically 0 voltage drop across the entire chip.
 
-![[Pasted image 20250915224006.png]]
+![IR Drop](Images/Pasted%20image%202025091524006.png)
