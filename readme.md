@@ -38,4 +38,4 @@ This is the approximate routing congestion as determined by the RUDY metric, whe
 
 yeah same issue as power density idk why this isn't working either. Cannot upload VCD so it seems like it's only tracking static power so there is basically 0 voltage drop across the entire chip.
 
-![IR Drop](Images/Pasted%20image%202025091524006.png)
+![IR Drop](/Users/jhsu2022/my_designs/32-Bit-CPU/Images/Pasted%image%20250915224006.png)

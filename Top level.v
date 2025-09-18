@@ -5,11 +5,11 @@
 module MIPSpipeline(
     input clk,
     input reset,
-    output [31:0] current_pc // <-- FIX: Added an output port
+    output [31:0] current_pc
 );
 
 // Connect internal PC to the new output port
-assign current_pc = PC; // <-- FIX: Assigned internal PC to the output
+assign current_pc = PC;
 
 // Pipeline Stage Registers
 reg [31:0] PC;
@@ -106,7 +106,6 @@ JRControl JR_CU(
     .ALUop(ALUop),
     .Function(func)
 );
-// ** MODULES 'Discard_Instr' and 'flush_block' have been removed and their logic is now below **
 
 // Register File
 RegFile RF(
@@ -171,17 +170,17 @@ ALUControl ALU_CU(
     .ALUControl(ALUControl)
 );
 // 3x32 Mux for Forwarding A
-// Note: Mux with name '3x32mux' is not compatible. Using manual logic.
 wire [31:0] MuxA_inputA = IDEX_ReadData1;
 wire [31:0] MuxA_inputB = EXMEM_ALUResult;
 wire [31:0] MuxA_inputC = WB_WriteData;
 assign Bus_A_ALU = (ForwardA == 2'b01) ? MuxA_inputC : ((ForwardA == 2'b10) ? MuxA_inputB : MuxA_inputA);
+
 // 3x32 Mux for Forwarding B
-// Note: Mux with name '3x32mux' is not compatible. Using manual logic.
 wire [31:0] MuxB_inputA = IDEX_ReadData2;
 wire [31:0] MuxB_inputB = EXMEM_ALUResult;
 wire [31:0] MuxB_inputC = WB_WriteData;
 assign Bus_B_forwarded = (ForwardB == 2'b01) ? MuxB_inputC : ((ForwardB == 2'b10) ? MuxB_inputB : MuxB_inputA);
+
 // Bus Mux (for ALU's B input)
 busMux ALU_B_Mux(
     .busA(Bus_B_forwarded),
@@ -212,21 +211,16 @@ dataMem DM(
 // IF STAGE - Instruction Fetch
 //=================================================================
 always @(*) begin
-    // PC + 4 is now a separate module
-    // instruction is now an output of InstructionMem module
+
 end
 
 //=================================================================
 // ID STAGE - Instruction Decode & Flush Logic
 //=================================================================
 
-// Logic to replace Discard_Instr module
-// Flush the IF and ID stages if a jump or taken branch occurs
 assign ID_flush = Jump || bneControl || JRControl;
 assign IF_flush = Jump || bneControl || JRControl;
-// Logic to replace flush_block module
-// If flush is active, zero out the control signals to create a 'nop'.
-// Otherwise, pass them through.
+
 assign ID_RegDst_out   = flush ? 1'b0 : RegDst;
 assign ID_ALUSrc_out   = flush ? 1'b0 : ALUSrc;
 assign ID_MemToReg_out = flush ? 1'b0 : MemToReg;
@@ -237,9 +231,9 @@ assign ID_Branch_out   = flush ? 1'b0 : Branch;
 assign ID_JRControl_out= flush ? 1'b0 : JRControl;
 assign ID_ALUop_out    = flush ? 2'b0 : ALUop;
 always @(*) begin
-    // Select correct extension for immediate
+
     Im16_Ext = SignZero ? zero_ext_out : sign_ext_out;
-    // Main flush signal combines flushes from jumps, branches, stalls, and prior cycles
+
     flush = ID_flush | IFID_flush | Stall_flush;
 end
 
@@ -247,17 +241,14 @@ end
 // EX STAGE - Execute
 //=================================================================
 always @(*) begin
-    // Forwarding logic is now a separate module
-    // ALU source mux is now a separate module
-    // ALU Control is now a separate module
-    // ALU is now a separate module
+
 end
 
 //=================================================================
 // MEM STAGE - Memory Access
 //=================================================================
 always @(*) begin
-    // Data memory access is now a separate module
+
 end
 
 //=================================================================
@@ -271,11 +262,10 @@ end
 // Hazard Detection and PC Control
 //=================================================================
 always @(*) begin
-    // Stall detection is now a separate module
 
     // Branch control
     bneControl = IDEX_Branch && ZeroFlag;
-    // The condition for bne is branch & zero flag is true
+
     PCbne = IDEX_PC4 + (IDEX_Im16_Ext << 2);
     // Jump control
     PCj = {IFID_PC4[31:28], IFID_Instruction[25:0], 2'b00};

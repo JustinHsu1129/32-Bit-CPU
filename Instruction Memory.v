@@ -18,8 +18,6 @@ reg [31:0] instMem [63:0];
     // --- FOR SYNTHESIS ---
     // Direct initialization of your program. The synthesis tool will infer a ROM.
     initial begin
-        // It's good practice to initialize the whole memory to a default value,
-        // such as a 'nop' instruction, to avoid undefined states (latches).
         integer i;
         for (i = 0; i < 64; i = i + 1) begin
             instMem[i] = 32'h00000013; // RISC-V NOP
